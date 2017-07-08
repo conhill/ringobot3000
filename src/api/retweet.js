@@ -56,7 +56,7 @@ const retweet = () => {
 
                 //Create the tweet, determine length to pass < 140 characters
                 if (goodTweet.snippet.length > 140) {
-                    tweet = goodTweet.snippet.slice(0, 100) + '... ' + goodTweet.web_url;
+                    tweet = goodTweet.snippet.slice(0, 80) + '... ' + goodTweet.web_url;
                 } else {
                     tweet = goodTweet.snippet + '... ' + goodTweet.web_url;
                 }
