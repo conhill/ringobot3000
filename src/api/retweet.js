@@ -21,12 +21,16 @@ const retweet = () => {
         };
         bot.get('statuses/user_timeline', options, function(err, data) {
             //For the length of NYT articles, check current tweets
+            var found = false;
             for (var i = 0; i < nytArt.length; i++) {
                 for (var x = 0; x < data.length; x++) {
-                    if (nytArt[i].snippet.slice(0, 40).indexOf(data[x].text.slice(0, 40)) === -1) {
-                        callback(nytArt[i]);
-                        return;
+                    if (nytArt[i].snippet.slice(0, 40).indexOf(data[x].text.slice(0, 40)) !== -1) {
+                        found = true;
                     }
+                }
+                if(found === false){
+                    callback(nytArt[i]);
+                    return;
                 }
             }
             callback(false);
