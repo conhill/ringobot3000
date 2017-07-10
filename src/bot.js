@@ -14,4 +14,4 @@ setInterval(retweet, config.twitterConfig.retweet)
 
 // reply to new follower
 const userStream = bot.stream('user')
-userStream.on('follow', reply)
+// userStream.on('follow', reply)
