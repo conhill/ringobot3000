@@ -53,11 +53,9 @@ const retweet = () => {
 
             //use checkTweet to get a tweet against current tweets
             checkTweet(body.response.docs, function(goodTweet) {
-                console.log(goodTweet);
                 if(goodTweet !== ''){
                     tweet = goodTweet.snippet.slice(0, 80) + '... ' + goodTweet.web_url;
-        
-                    console.log(tweet.length);
+
                     if(tweet.length > 140){
                         tweet = goodTweet.snippet.slice(0, 60) + '... ' + goodTweet.web_url;
                     }
