@@ -7,7 +7,6 @@ const config = require('./config')
 const bot = new Twit(config.twitterKeys)
 
 const retweet = require('./api/retweet')
-const reply = require('./api/reply')
 
 // retweet on keywords
 retweet()
