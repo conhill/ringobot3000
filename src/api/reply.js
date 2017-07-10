@@ -1,4 +1,3 @@
-require('dotenv').config()
 const Twit = require('twit')
 const unique = require('unique-random-array')
 const config = require('../config')
